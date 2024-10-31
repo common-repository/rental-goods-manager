@@ -1,0 +1,293 @@
+
+
+
+/* WEBフォントアイコン */
+@font-face {
+  font-family: 'rental-goods-manager-fontello';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("./my-fonts/fa-brands-400.eot");
+  src: url("./my-fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("./my-fonts/fa-brands-400.woff2") format("woff2"), url("./my-fonts/fa-brands-400.woff") format("woff"), url("./my-fonts/fa-brands-400.ttf") format("truetype"), url("./my-fonts/fa-brands-400.svg#fontawesome") format("svg"); }
+@font-face {
+  font-family: 'rental-goods-manager-fontello';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url("./my-fonts/fa-regular-400.eot");
+  src: url("./my-fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("./my-fonts/fa-regular-400.woff2") format("woff2"), url("./my-fonts/fa-regular-400.woff") format("woff"), url("./my-fonts/fa-regular-400.ttf") format("truetype"), url("./my-fonts/fa-regular-400.svg#fontawesome") format("svg"); }
+@font-face {
+  font-family: 'rental-goods-manager-fontello';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("./my-fonts/fa-solid-900.eot");
+  src: url("./my-fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("./my-fonts/fa-solid-900.woff2") format("woff2"), url("./my-fonts/fa-solid-900.woff") format("woff"), url("./my-fonts/fa-solid-900.ttf") format("truetype"), url("./my-fonts/fa-solid-900.svg#fontawesome") format("svg"); }
+
+.icon-add::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f0fe";
+}
+.icon-folder-plus::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f65e";
+}
+.icon-question-circle::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f059";
+}
+.icon-window-close::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f410";
+}
+.icon-buffer::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f837";
+}
+.icon-bars::before{
+	font-family:'rental-goods-manager-fontello';
+	font-style: normal;
+	font-weight:900;
+	content: "\f0c9";
+}
+
+/*サブミットボタンが無効になったときのスタイル*/
+input[type="submit"]:disabled {
+	background: #ccc;
+}
+input[type="submit"]:disabled:hover {
+	color: inherit;
+}
+
+
+/*ヘルプ吹き出しの設定*/
+.rental-goods-manager-help{
+	display: inline-block;
+	position: relative;
+	cursor: help;
+}
+.rental-goods-manager-help .rental-goods-manager-help__link{
+	position: relative;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+	box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+	border-bottom: solid 2px #b5b5b5;
+}
+.rental-goods-manager-help .rental-goods-manager-help__balloon{
+	display: none;
+	z-index: 10000;
+	width: 250px;
+	height: 50px;
+	line-height: 1.1em;
+	position: absolute;
+	top: 0;
+	left: 24px;
+	padding: 5px 5px 5px 11px;
+	border-radius: 5px;
+	background: #33cc99;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+}
+.rental-goods-manager-help .rental-goods-manager-help__balloon:after {
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -20px;
+	top: 10px;
+	margin-left: 10px;
+	border: solid transparent;
+	border-color: rgba(51, 204, 153, 0);
+	border-top-color: #33cc99;
+	border-width: 10px;
+	pointer-events: none;
+	content: " ";
+}
+.rental-goods-manager-help .rental-goods-manager-help__link:hover + .rental-goods-manager-help__balloon{
+	display: inline-block;
+}
+
+/* tableを使わない表を表示するためのクラス*/
+.rental-goods-manager-table{
+	display: table;
+	table-layout: fixed;
+	color: #333333;
+}
+.rental-goods-manager-table > ul{
+	list-style: none;
+	display: table-row;
+	border: 0.5px solid #ccc;
+}
+.rental-goods-manager-table li{
+	display: table-cell;
+	margin: 0px;
+	padding: 3px 2px;
+	border: 0.5px solid #ccc;
+}
+.rental-goods-manager-table ul.rental-goods-manager-table--header li{
+	background-color: #e9f1fb;
+	font-weight: bold;
+}
+
+
+/*ポップアップ用の外枠。中にコンテンツを書く*/
+.rental-goods-manager-popup-container{
+	position: relative:
+	width: 0px;
+	height: 0px;
+}
+
+/*-バウンドするポップアップ-------------------------------------*/
+/* バウンドするアニメーション*/
+@keyframes rentalGoodsManagerBoundAnimation {
+	0% {top: -25px;transform: scale(1); opacity: 1; z-index: 10000;}
+	5% {top: 0px; opacity: 1;z-index: 10000;}
+	90% {top: 0;opacity: 1; z-index: 10000;}
+	95% {top: 0;opacity: 0.5; z-index: 10000;}
+	100% {top: 0;opacity: 0; z-index: 0;}
+}
+.rental-goods-manager-popup-content-bound-animation{
+	animation-name: rentalGoodsManagerBoundAnimation;
+	animation-duration: 3.0s;
+	animation-timing-function: ease-out;
+	z-index: -10;
+	opacity: 0;
+	position: relative;
+	top: 0px;
+	left: 10px;
+	width: 200px;
+	padding: 2px;
+	background-color: #FFFFFF;
+	font: bold black 12px;
+	border: solid 2px #d27d00;
+	border-radius: 4px;/*角の丸み*/
+}
+
+
+
+
+/*ボタンを表すクラス（機能名のマーキングのため）*/
+.rental-goods-manager-btn-edit {
+}
+.rental-goods-manager-btn-cancel {
+}
+.rental-goods-manager-btn-print {
+}
+
+
+/*タブのアニメーション(戻る)*/
+.slider-tab{
+}
+@keyframes rentalGoodsManagerSlideInRight {
+  from {
+    transform: translateX(-900px);
+  }
+  
+  to {
+    transform: translateX(0px);
+  }
+}
+/*左方向にスライドするアニメーション。*/
+.slider-tab.slider-tab--slide-in-right {
+  animation-name: rentalGoodsManagerSlideInRight;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  
+}
+
+/*タブのアニメーション(進む)*/
+@keyframes rentalGoodsManagerSlideInLeft {
+  from {
+    transform: translateX(900px);
+  }
+  
+  to {
+    transform: translateX(0px);
+  }
+}
+/*右方向にスライドするアニメーション。*/
+.slider-tab.slider-tab--slide-in-left {
+  animation-name: rentalGoodsManagerSlideInLeft;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+}
+/*タブをアクティブにする（見える位置に配置する）*/
+.slider-tab.slider-tab--active{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+/*現在のタブの右側にタブを配置する（見えない位置になる）*/
+.slider-tab.slider-tab--right-side{
+	position: absolute;
+	top: 0px;
+	left: calc(100%);
+}
+
+
+
+/* メインボタン */
+.rental-goods-manager-btn-square-so-pop {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px #d27d00;/*線色*/
+  cursor: pointer;
+}
+/*押したとき*/
+.rental-goods-manager-btn-square-so-pop:active {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+/*ボタンを無効にしたとき*/
+.rental-goods-manager-btn-square-so-pop:disabled {
+	background: #ccc;/*色*/
+	cursor: default;
+}
+
+
+
+/* サブボタン */
+.rental-goods-manager-btn-square-soft {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  position: relative;
+  text-decoration: none;
+  color: #a5a5a5;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  background: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+/*押したとき*/
+.rental-goods-manager-btn-square-soft:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);/*沈むように*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+}
+/*ボタンを無効にしたとき*/
+.rental-goods-manager-btn-square-soft:active {
+	background: #ccc;/*色*/
+	cursor: default;
+}
+
+

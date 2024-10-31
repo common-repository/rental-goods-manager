@@ -1,0 +1,52 @@
+
+<!-- Erase this comment, if use this file. 
+DATA HIERARCHY SAMPLE:
+{
+	order:{
+		order_id: "4",
+		user_name: "name",
+		application_date: "2020-04-21 00:47:22.00",
+		rental_from: "2020-04-21",
+		rental_to: "2020-04-22",
+		remarks: "",
+		rental_goods_ids: ["1", "4"],
+		user_id: "1",
+		user_department: "department A",
+		user_zip: "5555888",
+		user_address: "RM11, 324 A Ave, ",
+		order_goods: [{
+			{goods_name: "Guitter A", order_num: "2"}
+		}],
+		rental_goods: [
+			{goods_id: "1", goods_name: "Guitter A", goods_serialno: "1000001", goods_no: "#001", hide: "0"},
+			{goods_id: "4", goods_name: "Guitter A", goods_serialno: "1000004", goods_no: "#001", hide: "0"}
+		]
+	}
+}
+
+
+-->
+
+
+<div class="goods-reservation-print__title">Print Bill for rental items</div>
+<div class="goods-reservation-print__subtitle">Reservation Info</div>
+<table>
+	<tr><th>RESERVATION_ID</th><td data-id="reservation_tab_print.order_id">{{order.order_id}}</td></tr>
+	<tr><th>RESERVATION_USER</th><td data-id="reservation_tab_print.user">{{order.user_name}}</td></tr>
+	<tr><th>RESERVATION_TERM</th><td data-id="reservation_tab_print.rental_term">{{order.rental_from}} to {{order.rental_to}} </td></tr>
+	<tr><th>RESERVATION_SEND_INFO</th><td data-id="reservation_tab_print.send_info">ZIP&nbsp;{{order.user_zip}}&nbsp;{{order.user_address}}</td></tr>
+	<tr><th>REMARKS</th><td data-id="reservation_tab_print.remarks">{{order.remarks}}</td></tr>
+</table>
+<br>
+<div class="goods-reservation-print__subtitle">Goods for sending</div>
+<div class="goods-reservation-print__description">
+	Our equipment rented are as follows. <br>
+	Please confirm when you recieve. When return, please send everything including the equipment box. <br>
+	If the equipment is missing or damaged, we may ask you to purchase a replacement equipment.
+</div>
+<table data-id="reservation_tab_print.table_rental">
+	<tr><th style="width:120px">GOODS_NAME</th><th style="width:200px">GOODS_SERIALNO</th><th style="width:150px">GOODS_NO</th></tr>
+	{{#each order.rental_goods}}
+		<tr><td>{{goods_name}}</td><td>{{goods_serialno}}</td><td>{{goods_no}}</td></tr>
+	{{/each}}
+</table>

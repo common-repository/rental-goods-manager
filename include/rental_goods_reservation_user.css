@@ -1,0 +1,135 @@
+/*ユーザ操作用CSS-----------------------------*/
+
+/*ユーザ操作セクション*/
+.reservation-user-sec{
+	position: relative;
+	border: solid 1px #dce3e5;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	max-width: 850px;
+	overflow-x: scroll;
+	font-size: 12px;
+}
+
+.reservation-user-sec:before {
+	display: block;
+	background-image: linear-gradient(-272deg,#206584,#83d0f2);
+	content: '';
+	height: 4px;
+	margin-bottom: 10px;
+}
+
+.reservation-user-sec header{
+	padding-left: 5px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.reservation-user-sec .reservation-user-sec__explain{
+	padding-left: 15px;
+	color:#808080;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+
+
+
+
+/*エラー用*/
+.reservation-user-err {
+  text-align: left;
+  vertical-align: top;
+  color: red;
+  font-weight: bold;
+}
+
+
+
+/*タブ*/
+.reservation-user-tab-container{
+	position: relative;
+	display: block;
+	overflow: hidden;
+	padding-left: 15px;
+	min-width: 840px;
+	height: 400px;
+}
+
+.reservation-user-tab {
+	position: absolute;
+	top: 0px;
+	left: calc(-100%);
+	width: calc(98%);
+	height: calc(98%);
+	padding-left: 10px;
+	overflow: hidden;
+	background-color: #FFFFEE;
+}
+
+.reservation-user-tab.reservation-user-tab--scroll{
+	overflow-y: scroll
+}
+
+.reservation-user-tab form label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.reservation-user-tab table{
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+.reservation-user-tab table thead, .reservation-tab table tbody{
+  display: block;
+}
+
+.reservation-user-tab table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  padding: 2px 2px;
+  text-align: left;
+}
+
+.reservation-user-tab table td{
+  text-align: center;
+  border: 1px solid #a8b7c5;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  padding: 2px 2px;
+  text-align: left;
+}
+
+.reservation-user-tab a{
+	display: inline-block;
+	transition: .3s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	vertical-align: text-top;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
+	height: 1.5em;
+	padding: 0px;
+	margin: 0px 0px 0px 3px;
+}
+.reservation-user-tab a:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+/* アイコンフォント用 */
+.reservation-user-tab i{
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: text-top;
+	font-size: 1.0em;
+	height: 1.0em;
+	padding: 0px;
+	margin: 0px 1px 0px 1px;
+}

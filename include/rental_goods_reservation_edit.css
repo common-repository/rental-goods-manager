@@ -1,0 +1,410 @@
+
+
+
+/* 予約画面のCSS ----------------------------*/
+
+
+
+
+.reservation-container {
+	position: relative;
+	width: 920px;
+	height: 750px;
+	overflow: hidden;
+	background-color: #FFFFEE;
+	font-size: 13px;
+}
+
+.reservation-tab {
+	position: absolute;
+	top: 0px;
+	left: calc(-100%);
+	width: calc(98%);
+	height: calc(98%);
+	padding-left: 10px;
+	overflow: hidden;
+	background-color: #FFFFEE;
+}
+
+
+.reservation-tab table{
+  border-collapse:separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.reservation-tab table thead, .reservation-tab table tbody{
+  display: block;
+}
+
+.reservation-tab table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  padding: 2px 2px;
+  text-align: left;
+  /*線まで入れた幅や高さの指定にする*/
+  box-sizing:border-box;
+}
+
+.reservation-tab table td{
+  text-align: center;
+  border: 1px solid #a8b7c5;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  padding: 2px 2px;
+  text-align: left;
+  /*線まで入れた幅や高さの指定にする*/
+  box-sizing:border-box;
+}
+
+.reservation-tab a{
+	display: inline-block;
+	transition: .3s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	vertical-align: text-top;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
+	height: 1.5em;
+	padding: 0px;
+	margin: 0px 0px 0px 3px;
+	cursor: pointer;
+}
+.reservation-tab a:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* アイコンフォント用 */
+.reservation-tab i{
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: text-top;
+	font-size: 1.0em;
+	height: 1.0em;
+	padding: 0px;
+	margin: 0px 1px 0px 1px;
+}
+
+/* 注文処理タブの真ん中 */
+.reservation-tab-process-middle {
+	height: 180px;
+	overflow: hidden;
+}
+.reservation-tab-process-middle > div{
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	overflow: hidden;
+}
+/* 注文処理タブの一番下 */
+.reservation-tab-process-bottom {
+	height: 250px;
+	overflow: hidden;
+}
+
+
+
+/* 貸出しのスケジュール表 */
+.goods-reservation-schedule{
+	background-color: white;
+	position: relative;
+	width: 800px;
+	max-height: 350px;
+	overflow-y: scroll;
+}
+
+.goods-reservation-schedule-title{
+	border: solid 1x black;
+	padding: 0px;
+	margin: 0px;
+	width: 800px;
+	height: 480px;
+	background-color: ;
+	font-size: 0;
+	letter-spacing: -.5em;  
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-title .goods-reservation-schedule-title__name{
+	position: relative;
+	display: inline-block; 
+	padding-left: 3px;
+	margin: 0px;
+	width: 180px; 
+	height: 480px;
+	border: solid 1px black;
+	font-size: 12px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-title .goods-reservation-schedule-title__date{
+	position: relative;
+	display: inline-block; 
+	padding-left: 3px;
+	margin: 0px;
+	width:150px; 
+	height: 480px;
+	border: solid 1px black;
+	font-size: 12px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-title .goods-reservation-schedule-title--relative{
+	position: relative;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	letter-spacing: -.5em;
+	vertical-align: top;
+}
+.goods-reservation-schedule-title .goods-reservation-schedule-title--absolute{
+	position: absolute;
+	display: inline-flex;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+.goods-reservation-schedule-rental-term{
+	position: absolute;
+	top: 0px;
+	border: 0px;
+	padding: 0px;
+	margin-top: 2px;
+	height: 350px;
+	background-color: yellow;
+	font-size: 0;
+	letter-spacing: -.5em;  
+	vertical-align: top;
+	z-index: 0;
+}
+
+.goods-reservation-schedule-data{
+	position: absolute;
+	top: 2em;
+	left: 0px;
+	padding: 0px;
+	margin: 0px;
+	width: 800px;
+	font-size: 12px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-data-item{
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	border: solid 0.5px black;
+	border-left-width: 0px;
+	/*HTML上の改行文字によるfont-sizeの影響で2pxくらい隣同士に間が空く問題の解決のため*/
+	font-size: 0px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__name{
+	position: relative;
+	display: inline-block;
+	padding: 2px 0px 0px 2px;
+	margin: 0px;
+	width: 180px;
+	overflow: hidden;
+	font-size: 12px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+/*商品の説明用のフキダシ*/
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__balloon{ 
+	position: absolute;
+	z-index: 1000;
+	top: 0px;
+	left: 180px;
+	display: none;
+	padding: 4px;
+	margin: 0px;
+	width: 200px;
+	height: 38px;
+	line-height:1.1em;
+	border-radius: 5px;
+	background: #33cc99;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+}
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__name:hover + .goods-reservation-schedule-data-item__balloon{
+	display: inline-block;
+}
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--relative{
+	position: relative;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	letter-spacing: -.5em;
+	vertical-align: top;
+}
+/*貸出期間のスケジュールのバー*/
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__bar{
+	position: absolute;
+	top: 10px;
+	border: solid 1px black;
+	background-color: blue;
+	padding: 0px;
+	margin: 0px;
+	height: 14px;
+	font-size: 12px;
+	/*線まで入れた幅や高さの指定にする*/
+	box-sizing:border-box;
+}
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__bar-text{
+	display: none;
+	position: absolute;
+	top: -5.5px;
+	font-size: 9px;
+	letter-spacing: -0.1em;
+	background-color: transparent;
+	padding: 0px;
+	padding-left: 1px;
+	margin: 0px;
+}
+/*貸出期間のスケジュールのバーの日付テキストのフキダシ*/
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item__bar:hover + .goods-reservation-schedule-data-item__bar-text {
+	display: block;
+}
+/*ステータス毎のバーの装飾(何もしていない初期状態) */
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--bar-no{
+	background-color: transparent;
+}
+/*ステータス毎のバーの装飾(予約中) */
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--bar-re{
+	background-color: #CC0000;
+}
+/*ステータス毎のバーの装飾(予約確定) */
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--bar-ou{
+	background-color: blue;
+}
+/*ステータス毎のバーの装飾(完了) */
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--bar-cl{
+	background-color: #333333;
+}
+/*ステータス毎のバーの装飾(取消) */
+.goods-reservation-schedule-data-item .goods-reservation-schedule-data-item--bar-cl{
+	background-color: #BBBBBB;
+}
+
+/*モーダルウィンドウ*/
+input.goods-reservation-modal-switch {
+	display: none;
+}
+.goods-reservation-modal-overlay {
+	display: none;
+    position: fixed;
+    z-index: 100000;
+    top: 0px;
+    left: 0px;
+    display: none;
+    background-color: rgba(255,255,255, 0.3);
+    overflow-y: auto;
+    /* スマホ用スクロール */
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    /*表示幅など*/
+    width: 100%;
+    height: 120%;
+    max-height: 700px;
+}
+input.goods-reservation-modal-switch:checked + .goods-reservation-modal-overlay {
+    display: block;
+}
+.goods-reservation-modal-content {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    background-color: rgba(255,255,255, 1.0);
+    border: 2px double #aaaaaa;
+    overflow-y: auto;
+    /* スマホ用スクロール */
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    /*表示幅など*/
+    width: 70%;
+    height: 70%;
+}
+.goods-reservation-modal-content header{
+	padding: 15px 10px;
+	background-color: #23282D;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 18px;
+	top: 0;
+	text-align: left;
+}
+.goods-reservation-modal-content .goods-reservation-modal-content--body{
+	padding: 15px 10px;
+}
+.goods-reservation-modal-content table {
+	border-collapse:separate;
+	border-spacing: 0;
+	table-layout: fixed;
+	border: 1px solid #3c6690;
+	width: 90%;
+}
+.goods-reservation-modal-content table th{
+	padding: 5px 2px;
+	text-align: left;
+	font-weight: bold;
+	background-color: #e9f1fb;
+	border: 0.5px solid #3c6690;
+	width: 30%;
+}
+.goods-reservation-modal-content table td{
+	padding: 5px 2px;
+	text-align: left;
+	border: 0.5px solid #3c6690;
+}
+
+
+/*印刷タブのスタイル*/
+.goods-reservation-print{
+}
+.goods-reservation-print table{
+	border-collapse:separate;
+	border-spacing: 0;
+}
+.goods-reservation-print table thead, .goods-reservation-print table tbody{
+	display: block;
+}
+.goods-reservation-print table tr {
+	page-break-inside: avoid;
+}
+.goods-reservation-print table th{
+	text-align: center;
+	color: black;
+	background-color: #b0c4de;
+	border: 1px solid #3c6690;
+	box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+	padding: 2px 2px;
+	text-align: left;
+}
+.goods-reservation-print table td{
+	text-align: center;
+	border: 1px solid #3c6690;
+	box-shadow: 0px -3px 5px 1px #eee inset;
+	padding: 2px 2px;
+	text-align: left;
+}
+.goods-reservation-print .goods-reservation-print__title{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #b0c4de;
+}
+.goods-reservation-print .goods-reservation-print__subtitle{
+	text-align: left;
+	font-size: 15px;
+	font-weight: bold;
+	border-left: 5px solid black;
+	margin: 3px;
+	padding-left: 3px;
+}
